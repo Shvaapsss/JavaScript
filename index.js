@@ -53,7 +53,7 @@ class TransactionAnalyzer {
     /**
      * Метод для вычисления общей суммы транзакций за указанный день.
      * @param {number} year - Год.
-     * @param {number} month - Месяц (1-12).
+     * @param {number} month - Месяц (JavaScriptLab1-12).
      * @param {number} day - День месяца.
      * @returns {number} - Общая сумма транзакций за указанный день.
      */
