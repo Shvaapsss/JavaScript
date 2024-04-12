@@ -23,11 +23,11 @@ class TransactionAnalyzer {
  * Метод для вычисления общей суммы транзакций.
  * @returns {number} - Общая сумма транзакций.
  */
-calculateTotalAmount() {
+_calculateTotalAmount() {
     return this.transactions.reduce((total, transaction) => {
         return total + parseFloat(transaction.transaction_amount);
     }, 0);
-   }
+   }_
 
 ### Документирование кода
 Каждый метод класса TransactionAnalyzer был подробно задокументирован с использованием комментариев в стиле JSDoc. Эти комментарии описывают назначение каждого метода, входные параметры и ожидаемый результат, что обеспечивает понятность и удобство использования кода другими разработчиками.
@@ -36,9 +36,9 @@ calculateTotalAmount() {
  * Метод для вычисления общей суммы транзакций.
  * @returns {number} - Общая сумма транзакций.
  */
-calculateTotalAmount() {
+_calculateTotalAmount() {
 ...
-}
+}_
 ** Использование новых функций **
 Кроме стандартных функций анализа, в программу были добавлены новые методы для более широкого функционала. Эти методы включают в себя поиск транзакций по дате, поиск транзакций по названию торгового места и вычисление среднего значения транзакций.
 
@@ -48,22 +48,22 @@ calculateTotalAmount() {
  * @param {string} endDate - Конечная дата диапазона в формате 'YYYY-MM-DD'.
  * @returns {Array} - Массив объектов, представляющих транзакции, проведенные в указанном диапазоне дат.
  */
-getTransactionsInDateRange(startDate, endDate) {
-
-}
+_getTransactionsInDateRange(startDate, endDate) {
+..
+}_
 
 Использование программы
 
 После разработки программы был создан экземпляр класса TransactionAnalyzer, который был инициализирован данными о транзакциях. Затем с помощью этого экземпляра были вызваны различные методы для анализа транзакций, и результаты были выведены в консоль.
 
-const transactions = require('./transactions.json');
+_const transactions = require('./transactions.json');_
 
-const analyzer = new TransactionAnalyzer(transactions);
+_const analyzer = new TransactionAnalyzer(transactions);_
 
-console.log('Unique Transaction Types:', analyzer.getUniqueTransactionType());
+_console.log('Unique Transaction Types:', analyzer.getUniqueTransactionType());
 console.log('Total Amount:', analyzer.calculateTotalAmount());
-...
+..._
 
-Заключение
+### Заключение
 
 В результате проделанной работы была создана программа на JavaScript для анализа транзакций. Программа обладает широким набором функций для выполнения различных видов анализа данных о транзакциях и обеспечивает удобный интерфейс для работы с ними. Код программы был детально задокументирован, что обеспечивает простоту использования и понимания его другими разработчиками.
