@@ -45,6 +45,48 @@ fetchAndDisplayActivity();
 setInterval(fetchAndDisplayActivity, 60000);
 ```
 
+### index.html
+```html
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Activity for Captain Smith</title>
+</head>
+<body>
+<h1>Hey, Captain Smith, you can:</h1>
+<!-- Placeholder for displaying activity -->
+<p id="activity"></p>
+<!-- Script to load the JavaScript module -->
+<script type="module" src="index.js"></script>
+</body>
+</html>
+```
+
+### activity.js
+```javascript
+/**
+ * Fetches a random activity from the external API.
+ * @returns {Promise<string>} A promise that resolves with a random activity.
+ */
+export async function getRandomActivity() {
+    try {
+        // Fetch data from the API
+        const response = await fetch('https://www.boredapi.com/api/activity/');
+        // Parse the JSON response
+        const data = await response.json();
+        // Return the random activity
+        return data.activity;
+    } catch (error) {
+        // If an error occurs during fetching, throw an error
+        throw new Error("Failed to fetch activity");
+    }
+}
+
+```
 ### Документирование кода
 
 Код был документирован с использованием комментариев в стиле JSDoc, описывающих назначение каждой функции и метода.
