@@ -43,6 +43,7 @@ fetchAndDisplayActivity();
 
 // Update activity every minute
 setInterval(fetchAndDisplayActivity, 60000);
+```
 
 ### Документирование кода
 
