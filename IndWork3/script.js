@@ -1,5 +1,5 @@
 /**
- * Represents a transaction.
+ * Represents a transaction. 
  * @typedef {Object} Transaction
  * @property {number} id - The unique identifier of the transaction.
  * @property {string} date - The date and time of the transaction.
