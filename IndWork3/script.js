@@ -8,7 +8,7 @@
  * @property {string} description - The description of the transaction.
  */
 
-/**
+/** 
  * Array to store transactions.
  * @type {Transaction[]}
  */
