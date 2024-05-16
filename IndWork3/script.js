@@ -1,5 +1,5 @@
 /**
- * Represents a transaction. 
+ * Represents a transaction.
  * @typedef {Object} Transaction
  * @property {number} id - The unique identifier of the transaction.
  * @property {string} date - The date and time of the transaction.
@@ -8,7 +8,7 @@
  * @property {string} description - The description of the transaction.
  */
 
-/** 
+/**
  * Array to store transactions.
  * @type {Transaction[]}
  */
@@ -27,7 +27,7 @@ function addTransaction(event) {
     const description = document.getElementById('description').value;
 
     const transaction = {
-        id: transactions.length + 1, // Увеличиваем ID на 1 относительно предыдущей транзакции
+        id: Date.now(), // Уникальный идентификатор на основе временной метки
         date,
         amount,
         category,
@@ -48,7 +48,7 @@ function deleteTransaction(id) {
     const index = transactions.findIndex(transaction => transaction.id === id);
     if (index !== -1) {
         transactions.splice(index, 1);
-        document.getElementById('transactionTable').deleteRow(index);
+        document.getElementById('transactionTable').deleteRow(index + 1); // Используем index + 1 для удаления строки таблицы
         calculateTotal();
     }
 }
@@ -98,6 +98,10 @@ function displayTransaction(transaction) {
     } else {
         row.style.backgroundColor = 'red';
     }
+
+    row.addEventListener('click', () => {
+        showTransactionDetails(transaction);
+    });
 }
 
 document.getElementById('transactionForm').addEventListener('submit', addTransaction);
